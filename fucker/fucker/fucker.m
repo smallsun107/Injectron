@@ -49,20 +49,6 @@ int fakeHasValidOfflineReplyCode(void* _this) {
         NSLog(@"[-] BCompare Target address: %p", (void*)addr);
         uint8_t data[] = {'n'};
         DobbyCodePatch((void*)addr, data, sizeof(data));
-//        Licensed to:    中國飄雲閣www.chinapyg.com
-//        Quantity:       888888 users
-//        Serial number:  =PYG-666=
-//        License type:   Pro Edition for Windows/Linux/macOS
-//
-//        --- BEGIN LICENSE KEY ---
-//        6X8KZpymkm3y6KAxZedzGDxSNKGZDKQamWQ6RvdeL5ZQiEUmTz
-//        xAQ22uEX5acBZ4cDMwpmLqD423dWqnDqzZceHZ4MYV3B6wLth8
-//        DnQu5EeGo83ppyA7BWikDGjAXE5pb4v7jGZGNHB11ojLCVACfe
-//        fLUKbn85TWWKuzjC4vJpWE5fvvcWppK1UxpaBL5BfXvgQq6LA6
-//        uoHsAz7a4Dw69jFqD8bP4piLxCD8mRnJos2htj436KwgaW951z
-//        ZRq8mGumMdsnEG2F8hgQhym7mBmPq63eXyPt9kDwwvEXPPsJTG
-//        aUNVUruJTZHEXZAfMprKbsRWBWjiabjt6vTjHdJLmMmmNPHWPT
-//        --- END LICENSE KEY -----
     }
     
     

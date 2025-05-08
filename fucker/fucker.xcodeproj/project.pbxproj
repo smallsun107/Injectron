@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E62CFD512DCD007700B2C569 /* const.m in Sources */ = {isa = PBXBuildFile; fileRef = E62CFD502DCD007700B2C569 /* const.m */; };
 		E683AC642DCB720D00757D35 /* fucker.h in Headers */ = {isa = PBXBuildFile; fileRef = E683AC632DCB720D00757D35 /* fucker.h */; };
 		E683AC662DCB720D00757D35 /* fucker.m in Sources */ = {isa = PBXBuildFile; fileRef = E683AC652DCB720D00757D35 /* fucker.m */; };
 		E683AC6F2DCB726200757D35 /* libdobby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E683AC6E2DCB726200757D35 /* libdobby.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E62CFD502DCD007700B2C569 /* const.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = const.m; sourceTree = "<group>"; };
 		E683AC602DCB720D00757D35 /* libfucker.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libfucker.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		E683AC632DCB720D00757D35 /* fucker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fucker.h; sourceTree = "<group>"; };
 		E683AC652DCB720D00757D35 /* fucker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fucker.m; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				E683AC6D2DCB725800757D35 /* dobby */,
 				E683AC632DCB720D00757D35 /* fucker.h */,
 				E683AC652DCB720D00757D35 /* fucker.m */,
+				E62CFD502DCD007700B2C569 /* const.m */,
 			);
 			path = fucker;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E683AC662DCB720D00757D35 /* fucker.m in Sources */,
+				E62CFD512DCD007700B2C569 /* const.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
