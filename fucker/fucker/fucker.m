@@ -31,6 +31,7 @@ int fakeHasValidOfflineReplyCode(void* _this) {
     //    tiny_hook((void*)addr, fakeHasValidOfflineReplyCode, (void*)&original);
         DobbyHook((void*)addr, fakeHasValidOfflineReplyCode, (void*)&original);
     }
+    
     if (strstr(moduleName, "BCompare") != NULL) {
         [self showAlert];
         intptr_t addr = _dyld_get_image_vmaddr_slide(0) + 0x1027B31 + 0x100000000;
@@ -39,6 +40,13 @@ int fakeHasValidOfflineReplyCode(void* _this) {
         DobbyCodePatch((void*)addr, data, sizeof(data));
     }
     
+    if (strstr(moduleName,"Proxyman") != NULL) {
+        [self showAlert];
+        intptr_t addr = _dyld_get_image_vmaddr_slide(0) + 0x154F5 + 0x100000000;
+        NSLog(@"[-] Proxyman Target address: %p", (void*)addr);
+        uint8_t data[] = { 0x41, 0xC6, 0x47, 0x70, 0x02 };
+        DobbyCodePatch((void*)addr, data, sizeof(data));
+    }
     
 }
 
