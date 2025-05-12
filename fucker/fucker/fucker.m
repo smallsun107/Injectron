@@ -26,7 +26,8 @@ int fakeHasValidOfflineReplyCode(void* _this) {
     NSLog(@"[-] moduleName: %s",moduleName);
     if (strstr(moduleName, "Understand") != NULL){
         [self showAlert];
-        intptr_t addr = _dyld_get_image_vmaddr_slide(0) + 0x17A3F50 + 0x100000000;
+        // __ZN20HeliosLicenseManager24hasValidOfflineReplyCodeEv
+        intptr_t addr = _dyld_get_image_vmaddr_slide(0) + 0x17A3D70 + 0x100000000;
         NSLog(@"[-] Understand Target address: %p", (void*)addr);
     //    tiny_hook((void*)addr, fakeHasValidOfflineReplyCode, (void*)&original);
         DobbyHook((void*)addr, fakeHasValidOfflineReplyCode, (void*)&original);
