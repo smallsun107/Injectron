@@ -12,6 +12,24 @@
 
 @implementation fucker
 
+uintptr_t findFrameworkBaseAddress(const char *frameworkName) {
+    uint32_t imageCount = _dyld_image_count();
+    for (uint32_t i = 0; i < imageCount; ++i) {
+        const char *imageName = _dyld_get_image_name(i);
+        if (imageName && strstr(imageName, frameworkName)) {
+            const struct mach_header *header = _dyld_get_image_header(i);
+            intptr_t slide = _dyld_get_image_vmaddr_slide(i);
+            uintptr_t baseAddr = (uintptr_t)header + slide;
+            NSLog(@"[-] Found %s", imageName);
+            NSLog(@"[-] Slide: 0x%lx, Base address: 0x%lx", slide, baseAddr);
+            return baseAddr;
+        }
+    }
+    NSLog(@"[!] Framework not found: %s", frameworkName);
+    return 0;
+}
+
+
 static int (*original)(void* _this);
 
 int fakeHasValidOfflineReplyCode(void* _this) {
