@@ -12,6 +12,8 @@
 
 @implementation fucker
 
+#define PAGEZERO 0x100000000
+
 uintptr_t findFrameworkBaseAddress(const char *frameworkName) {
     uint32_t imageCount = _dyld_image_count();
     for (uint32_t i = 0; i < imageCount; ++i) {
@@ -54,7 +56,7 @@ int fakeHasValidOfflineReplyCode(void* _this) {
     
     if (strstr(moduleName, "BCompare") != NULL) {
         [self showAlert];
-        intptr_t addr = _dyld_get_image_vmaddr_slide(0) + 0x1027B31 + 0x100000000;
+        intptr_t addr = _dyld_get_image_vmaddr_slide(0) + 0x1027B31 + PAGEZERO;
         NSLog(@"[-] BCompare Target address: %p", (void*)addr);
         uint8_t data[] = {'n'};
         DobbyCodePatch((void*)addr, data, sizeof(data));
@@ -62,7 +64,7 @@ int fakeHasValidOfflineReplyCode(void* _this) {
     
     if (strstr(moduleName,"Proxyman") != NULL) {
         [self showAlert];
-        intptr_t addr = _dyld_get_image_vmaddr_slide(0) + 0x154F5 + 0x100000000;
+        intptr_t addr = _dyld_get_image_vmaddr_slide(0) + 0x154F5 + PAGEZERO;
         NSLog(@"[-] Proxyman Target address: %p", (void*)addr);
         uint8_t data[] = { 0x41, 0xC6, 0x47, 0x70, 0x02 };
         DobbyCodePatch((void*)addr, data, sizeof(data));
