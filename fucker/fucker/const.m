@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
+// 57J8Z-D2QD5-A37WU-LEG4E-43WYH
 //        Beyond Compare 5
 //        Licensed to:  smallsun
 //        Quantity:       9999 users
